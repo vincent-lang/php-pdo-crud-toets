@@ -26,3 +26,11 @@ $statement = $pdo->prepare($sql);
 $statement->bindValue(':SQLId', $_GET['Id'], PDO::PARAM_INT);
 
 $result = $statement->execute();
+
+if ($result) {
+    echo "Record is succesvol verwijderd";
+    header('Refresh:3;url=read.php');
+} else {
+    echo "Internal server error, record is niet verwijderd";
+    header('Refresh:3;url=read.php');
+}
