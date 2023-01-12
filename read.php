@@ -14,3 +14,17 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
+$sql = "SELECT Id
+            ,Merk
+            ,Model
+            ,Topsnelheid
+            ,Prijs
+            FROM DureAuto
+            ORDER BY Prijs desc";
+
+$statement = $pdo->prepare($sql);
+
+$statement->execute();
+
+$result = $statement->fetchAll(pdo::FETCH_OBJ);
