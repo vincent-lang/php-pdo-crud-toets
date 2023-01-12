@@ -23,7 +23,7 @@ $sql = "DELETE FROM DureAuto
 
 $statement = $pdo->prepare($sql);
 
-$statement->bindValue(':SQLId', $_GET['Id'], PDO::PARAM_INT);
+$statement->bindValue(':SQLId', $_GET['id'], PDO::PARAM_INT);
 
 $result = $statement->execute();
 
